@@ -1,7 +1,8 @@
 :root{
   /* --bg:#0e0e0c; */
   --bg:white ;
-  --fg:#ece7dd;
+  /* --bg: #ECE7DD; */
+  /* --fg:#ece7dd; */
   /* --fg:#c9a96a; */
   --fg:black;
   --dim:#8a857a;
@@ -26,15 +27,29 @@ body{
   cursor:grab;
 }
 
-.hero {
-  background-image: url("img9.jpg");
 
-
+.hero{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), url('img9.jpg');
+  /* background-image: linear-gradient(rgba(236, 244, 246, 0.5), rgba(236, 244, 246, 0.5)), url('img8.jpg'); */
+  /* background-color: rgba(236, 244, 246, 0.5); */
+  /* background-image: url(img12.jpg); */
+  background-origin: content-box;
+  /* background-size: contain; */
+  -ms-transform-origin-y: 0px;
+  padding: 40px;
   background-repeat: no-repeat;
   background-position:right;
-  background-size:60%;   
+  /* background-size:63.8%;          */
 
 }
+
+
+/* @media(max-width:760px){
+  .hero{
+    background-position:right;
+    background-size: 50%;
+  }
+} */
 
 
 a{
@@ -44,7 +59,8 @@ a{
 
 em{
   font-style:italic;
-  font-weight:300
+  font-weight:300;
+  color:rgba(202,170,107);
 }
 
 .mono{
@@ -59,12 +75,15 @@ em{
   letter-spacing:-.02em
 }
 .kinetic{
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
   font-family:"Inter Tight",sans-serif; 
   font-weight:100; 
   letter-spacing:-.0em; 
-  /* padding: 2px; */
+  padding-top: 6vw;
   line-height:.86;
-  /* text-transform:uppercase */
+  text-transform:uppercase
 }
 .dim{
   color:var(--dim)
@@ -157,9 +176,9 @@ em{
   transform-origin:right;
   transition:transform .4s cubic-bezier(.7,0,.2,1)
 }
-.nav nav a:hover{
-  /* color:var(--fg) */
-}
+/* .nav nav a:hover{
+  color:var(--fg)
+} */
 .nav nav a:hover:after{
   transform:scaleX(1);
   transform-origin:left
@@ -188,7 +207,7 @@ em{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom,rgba(14,14,12,.04),transparent 70%,var(--bg));
+  /* background:linear-gradient(to bottom,rgba(14,14,12,.04),transparent 90%,var(--bg)); */
   pointer-events:none
 }
 .hero-inner {
@@ -215,47 +234,58 @@ em{
   margin-bottom:40px
 }
 .kinetic h1, h1.kinetic{
-  font-size:clamp(3.5rem,4vw,15rem)
+  font-size:clamp(2.5rem,4vw,25rem)
 }
 .line-1{
-  /* padding-left: 5vw; */
-  /* color:rgba(256,256,256,0.40); */
-  /* color: white; */
-  color:rgba(0,0,0,.50);  
-
-  display:block;
-  overflow:hidden;
-  padding: 4px
+  font-family:"Fraunces",serif;
+  color:rgba(202,170,107);
+  color: black;
+  text-transform: uppercase;
+  font-weight:400; 
+  display:flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  font-style: oblique;
+  
 }
 .line-2{
-  /* color:rgba(201,169,106,0.93); */
-  /* color:rgba(256,256,256,0.90); */
-  color:rgba(0,0,0,.50); 
-  font-weight:700; 
-  display:block;
+  display:flex;
+  justify-content: flex-end;
+  font-family:"Fraunces",serif;
+
+  color: black;
+  font-weight:400; 
+
   overflow:hidden;
-  font-size:clamp(3.5rem,50vw,25rem);
-  font-style:italic;
-  text-transform:lowercase;
-
-
-  padding-bottom: 20px;
+  font-style: oblique;
+  /* font-size:clamp(3.5rem,10vw,25rem); */
+  padding-bottom: 100px; 
 }
+
 
 .rise{display:block;transform:translateY(110%);animation:rise 1.1s cubic-bezier(.7,0,.2,1) forwards;animation-delay:var(--d,.05s)}
 @keyframes rise{to{transform:translateY(0)}}
 .hero-foot{
   margin-top:40px;
-  display:flex;
+  display:block;
   justify-content:space-between;
   align-items:flex-end;
   gap:32px;
   flex-wrap:wrap
 }
 .lede{
+  display: flex;
+  justify-content: flex-end;
   font-family:"Fraunces",serif;
-  font-weight:300;
-  font-size:clamp(1.1rem,2vw,2.5rem)
+ 
+  /* font-size:clamp(1.1rem,15vw,2.5rem); */
+  font-size:clamp(1.8rem,4.2vw,2.5rem);
+  font-family:"Fraunces",serif;
+    color:rgba(202,170,107);
+  font-weight:400;   
+  flex-wrap: wrap;
+  
+  /* font-style: italic; */
 }
 .bar{
   display:inline-block;
